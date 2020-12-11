@@ -1,7 +1,6 @@
 # machine_learning_example
-This repository could be copied to `oscer` with `git clone git@github.com:cc-ats/machine_learning_example.git`. It would be more than welcomed to submit any bugs and feature request in the issue section. I also recommend you to set up your own `branch` by,
+This repository could be copied to `oscer` with `git clone git@github.com:cc-ats/machine_learning_example.git`. It would be more than welcomed to submit any bugs and feature request in the issue section. I recommend you to set up your own `branch` by,
 ```
-git remote add origin git@github.com:cc-ats/machine_learning_example.git
 git branch -M junjie
 git push -u origin junjie
 ```
