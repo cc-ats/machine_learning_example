@@ -1,9 +1,9 @@
 import sys
 sys.path.append("./src/")
 
-from raw_data import RawData
+from test_set import TestSet
 
-def main(path_prefix, num_set):
+def main(path_prefix):
     if path_prefix[-1] == "/":
         path_prefix = path_prefix[:-1]
 
@@ -11,8 +11,11 @@ def main(path_prefix, num_set):
     energy_file   = "%s/raw_data/energy.npy"%path_prefix
     force_file    = "%s/raw_data/force.npy"%path_prefix
     atm_type_file = "%s/raw_data/type.raw"%path_prefix
+    model_file    = "%s/train/model.pb"%path_prefix
+    detail_file   = "%s/test/test"%path_prefix
 
-    rd = RawData(
+    ts = TestSet(
+        model_file  = model_file,
         coord_file  = coord_file,
         energy_file = energy_file,
         force_file  = force_file,
@@ -23,7 +26,7 @@ def main(path_prefix, num_set):
         atom_types  = atm_type_file,
         verbose     = True
     )
-    rd.build(num_set, "%s/data"%path_prefix)
+    ts.build(detail_file=detail_file)
 
 if __name__ == "__main__":
-    main(sys.argv[1], int(sys.argv[2]))
+    main(sys.argv[1])

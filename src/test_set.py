@@ -1,10 +1,23 @@
+import os
+import sys
 import numpy
-import os, shutil
+
+from deepmd import DeepEval
+from deepmd import DeepPot
 
 from utils import hartree_to_ev, bohr_to_angstrom
 
-class RawData(object):
-    def __init__(self, coord_file=None, energy_file=None, force_file=None, box_file=None, atom_types=None, length_unit="A", energy_unit="Eh", is_pbc=False, verbose=True):
+def l2err (diff) :    
+    return numpy.sqrt(numpy.average (diff*diff))
+
+def save_txt_file(fname, data, header = "", append = False):
+    fp = fname
+    if append : fp = open(fp, 'ab')
+    numpy.savetxt(fp, data, header = header)
+    if append : fp.close()
+
+class TestSet(object):
+    def __init__(self, model_file=None, coord_file=None, energy_file=None, force_file=None, box_file=None, atom_types=None, length_unit="A", energy_unit="Eh", is_pbc=False, verbose=True):
         self.is_pbc     = is_pbc
         self.verbose    = verbose
 
@@ -12,6 +25,11 @@ class RawData(object):
             self._atm_type = numpy.loadtxt(atom_types, dtype=int)
         else:
             self._atm_type = numpy.asarray(atom_types, dtype=int)
+
+        self.model_file   = model_file
+        model_type        = DeepEval(model_file).model_type
+        assert model_type == 'ener'
+        self.dp           = DeepPot(model_file)
 
         length_unit = length_unit.lower()
         if length_unit in ["a", "angstrom"]:
@@ -52,14 +70,15 @@ class RawData(object):
         assert self._energy_data.shape == (self.nframe,)
         assert self._atm_type.shape    == (self.natom,)
 
-        self.dump_info(atom_types=atom_types,coord_file=coord_file, energy_file=energy_file, force_file=force_file, is_pbc=is_pbc, box_file=box_file, length_unit=length_unit, energy_unit=energy_unit)
+        self.dump_info(model_file=model_file, atom_types=atom_types,coord_file=coord_file, energy_file=energy_file, force_file=force_file, is_pbc=is_pbc, box_file=box_file, length_unit=length_unit, energy_unit=energy_unit)
 
     def dump_info(self, **kwargs):
         if not self.verbose:
             return
 
-        if ("coord_file" in kwargs) and ("energy_file" in kwargs) and ("force_file" in kwargs) and ("box_file" in kwargs) and ("is_pbc" in kwargs) and ("atom_types" in kwargs):
-            print ("# ---------------Raw data from files:--------------- ")
+        if ("model_file" in kwargs) and ("coord_file" in kwargs) and ("energy_file" in kwargs) and ("force_file" in kwargs) and ("box_file" in kwargs) and ("is_pbc" in kwargs) and ("atom_types" in kwargs):
+            print ("# ---------------Test data from files:--------------- ")
+            print("model_file  = %s"%kwargs["model_file"])
             print("coord_file  = %s"%kwargs["coord_file"])
             print("energy_file = %s"%kwargs["energy_file"])
             print("force_file  = %s"%kwargs["force_file"])
@@ -91,46 +110,71 @@ class RawData(object):
             print("num_set            = %s"%kwargs["num_set"])
             print("num_frame_in_a_set = %s"%kwargs["num_frame_in_a_set"])
             print ("# ---------------------------------------------- \n")
-            
 
-    def build(self, num_set, dir_name):
-        assert isinstance(dir_name, str)
-        if dir_name[-1] == "/":
-            dir_name = dir_name[:-1]
+    def build(self, detail_file=None):
+        numb_test    = self.nframe
 
-        if os.path.exists(dir_name):
-            shutil.rmtree(dir_name)
-        os.makedirs(dir_name)
-        numpy.savetxt("%s/type.raw"%dir_name, self._atm_type, fmt="%d", delimiter=',')
-            
-        num_frame_in_a_set = self.nframe//num_set
-        assert num_frame_in_a_set > 1
-        num_frame_in_sys   = num_set * num_frame_in_a_set
-        index_labels       = numpy.arange(num_frame_in_sys, dtype=int)
-        numpy.random.shuffle(index_labels)
-        index_labels       = index_labels.reshape(num_set, num_frame_in_a_set)
-        self.dump_info(num_set=num_set, dir_name=dir_name, num_frame_in_a_set=num_frame_in_a_set)
+        energy_data = self._energy_data[:numb_test].reshape([-1,1])
+        force_data  = self._force_data[:numb_test].reshape([numb_test, -1])
 
-        for i in range(num_set):
-            indices = index_labels[i]
-            set_name = "set.%03d"%i
-            path_name = "%s/%s"%(dir_name, set_name)
-            os.makedirs(path_name)
-            print("Making %s"%path_name)
-
-            data = self._box_data[indices].reshape(num_frame_in_a_set,9).astype(numpy.float32)
-            numpy.save("%s/box"%path_name, data)
-            
-            data = self._coord_data[indices].reshape(num_frame_in_a_set,-1).astype(numpy.float32)
-            numpy.save("%s/coord"%path_name, data)
-            
-            data = self._energy_data[indices].reshape(num_frame_in_a_set,).astype(numpy.float32)
-            numpy.save("%s/energy"%path_name, data)
-            
-            data = self._force_data[indices].reshape(num_frame_in_a_set,-1).astype(numpy.float32)
-            numpy.save("%s/force"%path_name, data)
-
+        coord = self._coord_data.reshape([numb_test, -1])
+        box   = self._box_data.reshape([numb_test, -1])
         if not self.is_pbc:
-            path_name = "%s/%s"%(dir_name, "nopbc")
-            with open(path_name, "w") as f:
-                pass
+            box = None
+        fparam = None
+        aparam = None
+
+        atype  = self._atm_type
+        atomic = False
+
+        ret = self.dp.eval(coord, box, atype, fparam = fparam, aparam = aparam, atomic = atomic)
+
+        energy = ret[0]
+        force  = ret[1]
+        virial = ret[2]
+        energy = energy.reshape([numb_test,1])
+        force  = force.reshape([numb_test,-1])
+        virial = virial.reshape([numb_test,9])
+        if atomic:
+            ae = ret[3]
+            av = ret[4]
+            ae = ae.reshape([numb_test,-1])
+            av = av.reshape([numb_test,-1])
+
+        l2e = (l2err (energy - energy_data))
+        l2f = (l2err (force  - force_data))
+        l2ea= l2e/self.natom
+
+        # print ("# energies: %s" % energy)
+        print ("# number of test data : %d " % numb_test)
+        print ("Energy L2err        : %e eV" % l2e)
+        print ("Energy L2err/Natoms : %e eV" % l2ea)
+        print ("Force  L2err        : %e eV/A" % l2f)
+
+        if detail_file is not None :
+
+            save_txt_file(detail_file+".c.out", coord,
+                        header = 'data_c',
+                        append = False)
+
+            pe = numpy.concatenate(
+                (
+                    numpy.reshape(energy_data,      [numb_test,-1]),
+                    numpy.reshape(energy,           [numb_test,-1])
+                ), 
+                axis = 1
+                )
+            save_txt_file(detail_file+".e.out", pe,
+                        header = 'data_e pred_e',
+                        append = False)
+
+            pf = numpy.concatenate(
+                (
+                    numpy.reshape(force_data,      [numb_test,-1]),
+                    numpy.reshape(force,           [numb_test,-1])
+                ), 
+                axis = 1
+                )
+            save_txt_file(detail_file+".f.out", pf,
+                        header = 'data_f pred_f',
+                        append = False)
