@@ -141,6 +141,7 @@ class TestSet(object):
             ae = ae.reshape([numb_test,-1])
             av = av.reshape([numb_test,-1])
 
+        print("energy - energy_data = ", energy - energy_data)
         l2e = (l2err (energy - energy_data))
         l2f = (l2err (force  - force_data))
         l2ea= l2e/self.natom

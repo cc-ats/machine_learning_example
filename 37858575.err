@@ -1,0 +1,53 @@
+[I 20:10:45.954 LabApp] JupyterLab extension loaded from /home/yangjunjie/anaconda3/lib/python3.8/site-packages/jupyterlab
+[I 20:10:45.954 LabApp] JupyterLab application directory is /home/yangjunjie/anaconda3/share/jupyter/lab
+[I 20:10:45.957 LabApp] Serving notebooks from local directory: /home/yangjunjie/machine_learning_example
+[I 20:10:45.957 LabApp] The Jupyter Notebook is running at:
+[I 20:10:45.957 LabApp] http://c316:8889/
+[I 20:10:45.957 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 20:10:58.638 LabApp] 302 GET / (fd1c:deca:fbad:cafe::d1) 0.50ms
+[W 20:10:59.908 LabApp] Could not determine jupyterlab build status without nodejs
+[W 20:11:01.631 LabApp] 404 GET /api/contents/test_sn2.ipynb?content=0&1607825461362 (fd1c:deca:fbad:cafe::d1): No such file or directory: test_sn2.ipynb
+[W 20:11:01.631 LabApp] No such file or directory: test_sn2.ipynb
+[W 20:11:01.631 LabApp] 404 GET /api/contents/test_sn2.ipynb?content=0&1607825461362 (fd1c:deca:fbad:cafe::d1) 49.33ms referer=http://localhost:8889/lab?
+[W 20:11:01.632 LabApp] 404 GET /api/contents/water.ipynb?content=0&1607825461364 (fd1c:deca:fbad:cafe::d1): No such file or directory: water.ipynb
+[W 20:11:01.632 LabApp] No such file or directory: water.ipynb
+[W 20:11:01.632 LabApp] 404 GET /api/contents/water.ipynb?content=0&1607825461364 (fd1c:deca:fbad:cafe::d1) 49.54ms referer=http://localhost:8889/lab?
+[W 20:11:01.636 LabApp] 404 GET /api/contents/test.ipynb?content=0&1607825461366 (fd1c:deca:fbad:cafe::d1): No such file or directory: test.ipynb
+[W 20:11:01.636 LabApp] No such file or directory: test.ipynb
+[W 20:11:01.636 LabApp] 404 GET /api/contents/test.ipynb?content=0&1607825461366 (fd1c:deca:fbad:cafe::d1) 2.00ms referer=http://localhost:8889/lab?
+[W 20:11:01.637 LabApp] 404 GET /api/contents/00_water/64water/qchem/qchem_0999.out?content=0&1607825461367 (fd1c:deca:fbad:cafe::d1): No such file or directory: 00_water/64water/qchem/qchem_0999.out
+[W 20:11:01.637 LabApp] No such file or directory: 00_water/64water/qchem/qchem_0999.out
+[W 20:11:01.637 LabApp] 404 GET /api/contents/00_water/64water/qchem/qchem_0999.out?content=0&1607825461367 (fd1c:deca:fbad:cafe::d1) 2.32ms referer=http://localhost:8889/lab?
+[W 20:11:01.644 LabApp] 404 GET /api/contents/00_water/64water/64water.pdb?content=0&1607825461368 (fd1c:deca:fbad:cafe::d1): No such file or directory: 00_water/64water/64water.pdb
+[W 20:11:01.644 LabApp] No such file or directory: 00_water/64water/64water.pdb
+[W 20:11:01.644 LabApp] 404 GET /api/contents/00_water/64water/64water.pdb?content=0&1607825461368 (fd1c:deca:fbad:cafe::d1) 1.26ms referer=http://localhost:8889/lab?
+[W 20:11:01.645 LabApp] 404 GET /api/contents/00_water/64water/qchem/37437481.err?content=0&1607825461370 (fd1c:deca:fbad:cafe::d1): No such file or directory: 00_water/64water/qchem/37437481.err
+[W 20:11:01.645 LabApp] No such file or directory: 00_water/64water/qchem/37437481.err
+[W 20:11:01.645 LabApp] 404 GET /api/contents/00_water/64water/qchem/37437481.err?content=0&1607825461370 (fd1c:deca:fbad:cafe::d1) 1.38ms referer=http://localhost:8889/lab?
+[W 20:11:01.646 LabApp] 404 GET /api/contents/00_water/64water/qchem/qchem_0999.out.efld?content=0&1607825461371 (fd1c:deca:fbad:cafe::d1): No such file or directory: 00_water/64water/qchem/qchem_0999.out.efld
+[W 20:11:01.646 LabApp] No such file or directory: 00_water/64water/qchem/qchem_0999.out.efld
+[W 20:11:01.646 LabApp] 404 GET /api/contents/00_water/64water/qchem/qchem_0999.out.efld?content=0&1607825461371 (fd1c:deca:fbad:cafe::d1) 0.82ms referer=http://localhost:8889/lab?
+[W 20:11:01.652 LabApp] 404 GET /api/contents/00_water/64water/qchem/qchem_0999.inp?content=0&1607825461373 (fd1c:deca:fbad:cafe::d1): No such file or directory: 00_water/64water/qchem/qchem_0999.inp
+[W 20:11:01.652 LabApp] No such file or directory: 00_water/64water/qchem/qchem_0999.inp
+[W 20:11:01.652 LabApp] 404 GET /api/contents/00_water/64water/qchem/qchem_0999.inp?content=0&1607825461373 (fd1c:deca:fbad:cafe::d1) 0.85ms referer=http://localhost:8889/lab?
+[W 20:11:01.654 LabApp] 404 GET /api/contents/sn2_gas_0/train/37634865.out?content=0&1607825461374 (fd1c:deca:fbad:cafe::d1): No such file or directory: sn2_gas_0/train/37634865.out
+[W 20:11:01.654 LabApp] No such file or directory: sn2_gas_0/train/37634865.out
+[W 20:11:01.654 LabApp] 404 GET /api/contents/sn2_gas_0/train/37634865.out?content=0&1607825461374 (fd1c:deca:fbad:cafe::d1) 1.09ms referer=http://localhost:8889/lab?
+TermSocket.open: 2
+[I 20:11:01.668 LabApp] New terminal with specified name: 2
+TermSocket.open: Opened 2
+[I 20:11:09.067 LabApp] Creating new notebook in /script
+[I 20:11:09.434 LabApp] Kernel started: 818bcc85-308c-4e95-b077-2de972e8b186
+[I 20:11:46.757 LabApp] Kernel started: 2b56689e-dafe-4d08-a215-eaf7a6c3257e
+[I 20:13:09.182 LabApp] Kernel started: 5eab0a66-5a4c-43f8-b91f-5d1127a4d91f
+[I 20:13:09.292 LabApp] Saving file at /script/Untitled.ipynb
+[I 20:15:09.372 LabApp] Saving file at /script/Untitled.ipynb
+[I 20:16:21.514 LabApp] Kernel shutdown: 5eab0a66-5a4c-43f8-b91f-5d1127a4d91f
+[W 20:16:21.755 LabApp] delete /script/water.ipynb
+[I 20:16:26.544 LabApp] Kernel shutdown: 2b56689e-dafe-4d08-a215-eaf7a6c3257e
+[W 20:16:26.771 LabApp] delete /script/test.ipynb
+[W 20:16:33.698 LabApp] delete /script/sn2.ipynb
+[W 20:16:38.359 LabApp] delete /script/test_sn2.ipynb
+[W 20:16:38.364 LabApp] delete /script/test_water.ipynb
+[I 20:17:00.938 LabApp] Kernel restarted: 818bcc85-308c-4e95-b077-2de972e8b186
+[I 20:17:09.461 LabApp] Saving file at /script/Untitled.ipynb
