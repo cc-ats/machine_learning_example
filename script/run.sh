@@ -9,24 +9,23 @@
 #SBATCH --job-name=test
 
 module purge;
+# module load CUDA/10.1.243-GCC-8.3.0;
 module load deepmd-kit/1.2.1-foss-2020a;
 export OMP_NUM_THREADS=20
 
 rm -rf ./train/;
-mkdir train;
 rm -rf ./data/;
-mkdir data;
 rm -rf ./test/;
-mkdir test;
 
-python script/build_system.py . 4;
+mkdir train;
+python script/build_system.py . 10;
 
+mkdir data;
 cd train;
-cp ../src/inp.json     .;
-cp ../src/train_cpu.sh .;
-
-dp train     inp.json
-dp freeze -o model.pb
+cp ../src/inp.json               .;
+dp train                  inp.json;
+dp freeze -o              model.pb;
 
 cd ..;
-python script/test_model.py .;
+mkdir test;
+python script/test_model.py      .;

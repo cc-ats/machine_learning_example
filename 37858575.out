@@ -1,7 +1,0 @@
-
-Command to create ssh tunnel:
-ssh -N -f -L 8889:c316:8889 yangjunjie@schooner.oscer.ou.edu
-
-Use a Browser on your local machine to go to:
-localhost:8889  (prefix w/ https:// if using password)
-

@@ -58,5 +58,5 @@ please make sure you have carefully read the `inp.json` file and the `train_cpu.
 ## Summary
 You can do all the thing by,
 ```
-bash ./script/run.sh
+sbatch ./script/run.sh
 ```

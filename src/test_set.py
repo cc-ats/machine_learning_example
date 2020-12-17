@@ -5,7 +5,7 @@ import numpy
 from deepmd import DeepEval
 from deepmd import DeepPot
 
-from utils import hartree_to_ev, bohr_to_angstrom
+from utils import get_energy_unit_converter, get_length_unit_converter, dump_info
 
 def l2err (diff) :    
     return numpy.sqrt(numpy.average (diff*diff))
@@ -31,25 +31,8 @@ class TestSet(object):
         assert model_type == 'ener'
         self.dp           = DeepPot(model_file)
 
-        length_unit = length_unit.lower()
-        if length_unit in ["a", "angstrom"]:
-            length_unit = "A"
-            length_unit_converter = 1.0
-        elif length_unit in ["au", "a.u.", "bohr"]:
-            length_unit = "Bohr"
-            length_unit_converter = bohr_to_angstrom
-        else:
-            raise AssertionError("Wrong Length Unit")
-
-        energy_unit = energy_unit.lower()
-        if energy_unit in ["ev"]:
-            energy_unit = "eV"
-            energy_unit_converter = 1.0/hartree_to_ev
-        elif energy_unit in ["au", "a.u.", "hartree", "eh"]:
-            energy_unit = "Eh"
-            energy_unit_converter = 1.0
-        else:
-            raise AssertionError("Wrong Energy Unit")
+        length_unit, length_unit_converter = get_length_unit_converter(length_unit)
+        energy_unit, energy_unit_converter = get_energy_unit_converter(energy_unit)
 
         self._coord_data  = numpy.load(coord_file)  * length_unit_converter
         self._energy_data = numpy.load(energy_file) * energy_unit_converter
@@ -76,40 +59,7 @@ class TestSet(object):
         if not self.verbose:
             return
 
-        if ("model_file" in kwargs) and ("coord_file" in kwargs) and ("energy_file" in kwargs) and ("force_file" in kwargs) and ("box_file" in kwargs) and ("is_pbc" in kwargs) and ("atom_types" in kwargs):
-            print ("# ---------------Test data from files:--------------- ")
-            print("model_file  = %s"%kwargs["model_file"])
-            print("coord_file  = %s"%kwargs["coord_file"])
-            print("energy_file = %s"%kwargs["energy_file"])
-            print("force_file  = %s"%kwargs["force_file"])
-            print("box_file    = %s"%kwargs["box_file"])
-            print("# Using periodic boundary condition")
-
-            if kwargs["is_pbc"]:
-                print("# Using periodic boundary condition")
-            else:
-                print("# Not using periodic boundary condition")
-
-            if isinstance(kwargs["atom_types"], str):
-                print("# Atom types are given by text file") 
-                print("atom_types    = %s"%kwargs["atom_types"])
-            else:
-                print("# Atom types are given by")
-                print(type(kwargs["atom_types"]))
-            print ("# -------------------------------------------------- \n")
-
-        if ("length_unit" in kwargs) and ("energy_unit" in kwargs):
-            print ("# ---------------Units:--------------- ")
-            print("length_unit  = %s"%kwargs["length_unit"])
-            print("energy_unit  = %s"%kwargs["energy_unit"])
-            print ("# ------------------------------------ \n")
-
-        if ("dir_name" in kwargs) and ("num_set" in kwargs) and ("num_frame_in_a_set" in kwargs):
-            print ("# ---------------Building system:--------------- ")
-            print("dir_name           = %s"%kwargs["dir_name"])
-            print("num_set            = %s"%kwargs["num_set"])
-            print("num_frame_in_a_set = %s"%kwargs["num_frame_in_a_set"])
-            print ("# ---------------------------------------------- \n")
+        dump_info(kwargs)
 
     def build(self, detail_file=None):
         numb_test    = self.nframe
@@ -145,7 +95,6 @@ class TestSet(object):
         l2f = (l2err (force  - force_data))
         l2ea= l2e/self.natom
 
-        # print ("# energies: %s" % energy)
         print ("# number of test data : %d " % numb_test)
         print ("Energy L2err        : %e eV" % l2e)
         print ("Energy L2err/Natoms : %e eV" % l2ea)

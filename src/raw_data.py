@@ -1,7 +1,7 @@
 import numpy
 import os, shutil
 
-from utils import hartree_to_ev, bohr_to_angstrom
+from utils import get_energy_unit_converter, get_length_unit_converter, dump_info
 
 class RawData(object):
     def __init__(self, coord_file=None, energy_file=None, force_file=None, box_file=None, atom_types=None, length_unit="A", energy_unit="Eh", is_pbc=False, verbose=True):
@@ -13,25 +13,8 @@ class RawData(object):
         else:
             self._atm_type = numpy.asarray(atom_types, dtype=int)
 
-        length_unit = length_unit.lower()
-        if length_unit in ["a", "angstrom"]:
-            length_unit = "A"
-            length_unit_converter = 1.0
-        elif length_unit in ["au", "a.u.", "bohr"]:
-            length_unit = "Bohr"
-            length_unit_converter = bohr_to_angstrom
-        else:
-            raise AssertionError("Wrong Length Unit")
-
-        energy_unit = energy_unit.lower()
-        if energy_unit in ["ev"]:
-            energy_unit = "eV"
-            energy_unit_converter = 1.0/hartree_to_ev
-        elif energy_unit in ["au", "a.u.", "hartree", "eh"]:
-            energy_unit = "Eh"
-            energy_unit_converter = 1.0
-        else:
-            raise AssertionError("Wrong Energy Unit")
+        length_unit, length_unit_converter = get_length_unit_converter(length_unit)
+        energy_unit, energy_unit_converter = get_energy_unit_converter(energy_unit)
 
         self._coord_data  = numpy.load(coord_file)  * length_unit_converter
         self._energy_data = numpy.load(energy_file) * energy_unit_converter
@@ -58,39 +41,7 @@ class RawData(object):
         if not self.verbose:
             return
 
-        if ("coord_file" in kwargs) and ("energy_file" in kwargs) and ("force_file" in kwargs) and ("box_file" in kwargs) and ("is_pbc" in kwargs) and ("atom_types" in kwargs):
-            print ("# ---------------Raw data from files:--------------- ")
-            print("coord_file  = %s"%kwargs["coord_file"])
-            print("energy_file = %s"%kwargs["energy_file"])
-            print("force_file  = %s"%kwargs["force_file"])
-            print("box_file    = %s"%kwargs["box_file"])
-            print("# Using periodic boundary condition")
-
-            if kwargs["is_pbc"]:
-                print("# Using periodic boundary condition")
-            else:
-                print("# Not using periodic boundary condition")
-
-            if isinstance(kwargs["atom_types"], str):
-                print("# Atom types are given by text file") 
-                print("atom_types    = %s"%kwargs["atom_types"])
-            else:
-                print("# Atom types are given by")
-                print(type(kwargs["atom_types"]))
-            print ("# -------------------------------------------------- \n")
-
-        if ("length_unit" in kwargs) and ("energy_unit" in kwargs):
-            print ("# ---------------Units:--------------- ")
-            print("length_unit  = %s"%kwargs["length_unit"])
-            print("energy_unit  = %s"%kwargs["energy_unit"])
-            print ("# ------------------------------------ \n")
-
-        if ("dir_name" in kwargs) and ("num_set" in kwargs) and ("num_frame_in_a_set" in kwargs):
-            print ("# ---------------Building system:--------------- ")
-            print("dir_name           = %s"%kwargs["dir_name"])
-            print("num_set            = %s"%kwargs["num_set"])
-            print("num_frame_in_a_set = %s"%kwargs["num_frame_in_a_set"])
-            print ("# ---------------------------------------------- \n")
+        dump_info(kwargs)
             
 
     def build(self, num_set, dir_name):
