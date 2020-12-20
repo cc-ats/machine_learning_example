@@ -17,9 +17,6 @@
 *.pb
 *.ckpt.*
 checkpoint
-data/
-train/
-test/
 script/.ipynb_checkpoints/
 tmp*
 CMakeCache.txt
