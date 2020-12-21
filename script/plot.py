@@ -37,7 +37,7 @@ def get_marker(i, marker_size=1, markevery=1000000):
                 markersize=marker_size,markevery=markevery)
 
 def get_plots(path_name):
-    energy_test = loadtxt("%s/test/test.e.out"%path_name)
+    energy_test = loadtxt("%s/test/test.out.e.out"%path_name)
     lcurve      = loadtxt("%s/train/lcurve.out"%path_name)[0::20,:]
     ibatch      = lcurve[:,0]
 
