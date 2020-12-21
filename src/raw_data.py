@@ -36,7 +36,7 @@ class RawData(object):
         assert self._energy_data.shape == (self.nframe,)
         assert self._atm_type.shape    == (self.natom,)
 
-        self.dump_info(atom_types=atom_types,coord_file=coord_file, energy_file=energy_file, force_file=force_file, is_pbc=is_pbc, box_file=box_file, length_unit=length_unit, energy_unit=energy_unit, force_unitforce_unit=force_unit)
+        self.dump_info(atom_types=atom_types,coord_file=coord_file, energy_file=energy_file, force_file=force_file, is_pbc=is_pbc, box_file=box_file, length_unit=length_unit, energy_unit=energy_unit, force_unit=force_unit)
 
     def dump_info(self, **kwargs):
         if not self.verbose:
