@@ -22,10 +22,11 @@ python script/build_system.py . 10;
 
 mkdir data;
 cd train;
-cp ../src/inp_loc.json  ./inp.json;
-dp train                  inp.json;
-dp freeze -o              model.pb;
+cp ../src/inp_se_ar.json ./inp.json;
+dp train                   inp.json;
+dp freeze -o               model.pb;
 
 cd ..;
 mkdir test;
 python script/test_model.py      .;
+python script/plot.py            .;
