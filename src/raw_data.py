@@ -1,7 +1,8 @@
 import numpy
 import os, shutil
 
-from utils import get_energy_unit_converter, get_length_unit_converter, dump_info
+from utils import get_energy_unit_converter, get_length_unit_converter, get_force_unit_converter
+from utils import dump_info
 
 class RawData(object):
     def __init__(self, coord_file=None, energy_file=None, force_file=None, box_file=None, atom_types=None, length_unit="A", energy_unit="Eh", force_unit="Eh/Bohr", is_pbc=False, verbose=True):
@@ -43,7 +44,6 @@ class RawData(object):
             return
 
         dump_info(kwargs)
-            
 
     def build(self, num_set, dir_name):
         assert isinstance(dir_name, str)

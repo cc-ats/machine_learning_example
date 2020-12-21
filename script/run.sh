@@ -29,3 +29,6 @@ dp freeze -o               model.pb;
 cd ..;
 mkdir test;
 python script/test_model.py      .;
+
+module purge;
+python script/plot.py            .;

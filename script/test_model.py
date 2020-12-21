@@ -23,6 +23,7 @@ def main(path_prefix):
         is_pbc      = False,
         length_unit = "A",
         energy_unit = "Eh",
+        force_unit  = "Eh/Bohr",
         atom_types  = atm_type_file,
         verbose     = True
     )
