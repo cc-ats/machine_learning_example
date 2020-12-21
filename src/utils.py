@@ -26,10 +26,11 @@ def dump_info(kwargs):
             print(type(kwargs["atom_types"]))
         print ("# -------------------------------------------------- \n")
 
-    if ("length_unit" in kwargs) and ("energy_unit" in kwargs):
+    if ("length_unit" in kwargs) and ("energy_unit" in kwargs) and ("force_unit" in kwargs):
         print ("# ---------------Units:--------------- ")
         print("length_unit  = %s"%kwargs["length_unit"])
         print("energy_unit  = %s"%kwargs["energy_unit"])
+        print("force_unit   = %s"%kwargs["force_unit"])
         print ("# ------------------------------------ \n")
 
     if ("dir_name" in kwargs) and ("num_set" in kwargs) and ("num_frame_in_a_set" in kwargs):
@@ -66,3 +67,17 @@ def get_energy_unit_converter(energy_unit):
         raise AssertionError("Wrong Energy Unit")
 
     return energy_unit_, energy_unit_converter
+
+def get_force_unit_converter(force_unit):
+    force_unit = force_unit.lower()
+    if force_unit in ["ev/a"]:
+        force_unit_          = "eV/A"
+        force_unit_converter = 1.0
+    elif force_unit in ["1", "", "au/au", "a.u./a.u.", "hartree/bohr", "hartree/au", "hartree/a.u.", "eh/bohr", "eh/au", "eh/a.u."]:
+        force_unit_          = "Eh/Bohr"
+        force_unit_converter = hartree_to_ev/bohr_to_angstrom
+    else:
+        print("force_unit = %s"%force_unit)
+        raise AssertionError("Wrong Energy Unit")
+
+    return force_unit_, force_unit_converter

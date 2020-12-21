@@ -4,7 +4,7 @@ import os, shutil
 from utils import get_energy_unit_converter, get_length_unit_converter, dump_info
 
 class RawData(object):
-    def __init__(self, coord_file=None, energy_file=None, force_file=None, box_file=None, atom_types=None, length_unit="A", energy_unit="Eh", is_pbc=False, verbose=True):
+    def __init__(self, coord_file=None, energy_file=None, force_file=None, box_file=None, atom_types=None, length_unit="A", energy_unit="Eh", force_unit="Eh/Bohr", is_pbc=False, verbose=True):
         self.is_pbc     = is_pbc
         self.verbose    = verbose
 
@@ -15,10 +15,11 @@ class RawData(object):
 
         length_unit, length_unit_converter = get_length_unit_converter(length_unit)
         energy_unit, energy_unit_converter = get_energy_unit_converter(energy_unit)
+        force_unit,  force_unit_converter  = get_force_unit_converter(force_unit)
 
         self._coord_data  = numpy.load(coord_file)  * length_unit_converter
         self._energy_data = numpy.load(energy_file) * energy_unit_converter
-        self._force_data  = numpy.load(force_file)  * energy_unit_converter/length_unit_converter
+        self._force_data  = numpy.load(force_file)  * force_unit_converter
 
         self.nframe = self._coord_data.shape[0]
         self.natom  = self._coord_data.shape[1]
@@ -35,7 +36,7 @@ class RawData(object):
         assert self._energy_data.shape == (self.nframe,)
         assert self._atm_type.shape    == (self.natom,)
 
-        self.dump_info(atom_types=atom_types,coord_file=coord_file, energy_file=energy_file, force_file=force_file, is_pbc=is_pbc, box_file=box_file, length_unit=length_unit, energy_unit=energy_unit)
+        self.dump_info(atom_types=atom_types,coord_file=coord_file, energy_file=energy_file, force_file=force_file, is_pbc=is_pbc, box_file=box_file, length_unit=length_unit, energy_unit=energy_unit, force_unitforce_unit=force_unit)
 
     def dump_info(self, **kwargs):
         if not self.verbose:
