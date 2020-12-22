@@ -1,0 +1,1195 @@
+# ---------------Raw data from files:--------------- 
+coord_file  = ./raw_data/coord.npy
+energy_file = ./raw_data/energy.npy
+force_file  = ./raw_data/force.npy
+box_file    = None
+# Not using periodic boundary condition
+# Atom types are given by text file
+atom_types    = ./raw_data/type.raw
+# -------------------------------------------------- 
+
+# ---------------Units:--------------- 
+length_unit  = A
+energy_unit  = Eh
+force_unit   = Eh/Bohr
+# ------------------------------------ 
+
+# ---------------Building system:--------------- 
+dir_name           = ./data
+num_set            = 10
+num_frame_in_a_set = 1920
+# ---------------------------------------------- 
+
+Making ./data/set.000
+Making ./data/set.001
+Making ./data/set.002
+Making ./data/set.003
+Making ./data/set.004
+Making ./data/set.005
+Making ./data/set.006
+Making ./data/set.007
+Making ./data/set.008
+Making ./data/set.009
+# DEEPMD:  _____               _____   __  __  _____           _     _  _   
+# DEEPMD: |  __ \             |  __ \ |  \/  ||  __ \         | |   (_)| |  
+# DEEPMD: | |  | |  ___   ___ | |__) || \  / || |  | | ______ | | __ _ | |_ 
+# DEEPMD: | |  | | / _ \ / _ \|  ___/ | |\/| || |  | ||______|| |/ /| || __|
+# DEEPMD: | |__| ||  __/|  __/| |     | |  | || |__| |        |   < | || |_ 
+# DEEPMD: |_____/  \___| \___||_|     |_|  |_||_____/         |_|\_\|_| \__|
+# DEEPMD: 
+# DEEPMD: Please read and cite:
+# DEEPMD: Wang, Zhang, Han and E, Comput.Phys.Comm. 228, 178-184 (2018)
+# DEEPMD: 
+# DEEPMD: ---Summary of the training---------------------------------------
+# DEEPMD: installed to:         /opt/oscer/easybuild_local/tmp/eb-BWOdWC/pip-req-build-r_w2iv5l/_skbuild/linux-x86_64-3.8/cmake-install
+# DEEPMD: source :              
+# DEEPMD: source brach:         master
+# DEEPMD: source commit:        dd9f2c7
+# DEEPMD: source commit at:     2016-09-29 17:01:11 -0500
+# DEEPMD: build float prec:     double
+# DEEPMD: build with tf inc:    /opt/oscer/software/TensorFlow/2.3.1-foss-2020a-Python-3.8.2/lib/python3.8/site-packages/tensorflow/include;/opt/oscer/software/TensorFlow/2.3.1-foss-2020a-Python-3.8.2/lib/python3.8/site-packages/tensorflow/include
+# DEEPMD: build with tf lib:    
+# DEEPMD: running on:           c037.oscer.ou.edu
+# DEEPMD: CUDA_VISIBLE_DEVICES: unset
+# DEEPMD: num_intra_threads:    0
+# DEEPMD: num_inter_threads:    0
+# DEEPMD: -----------------------------------------------------------------
+# DEEPMD: 
+# DEEPMD: ---Summary of DataSystem------------------------------------------------
+# DEEPMD: find 1 system(s):
+# DEEPMD:                                     system  natoms  bch_sz  n_bch   prob
+# DEEPMD:                                   ../data/       6       4   4320  1.000
+# DEEPMD: ------------------------------------------------------------------------
+# DEEPMD: 
+# DEEPMD: training without frame parameter
+# DEEPMD: built lr
+# DEEPMD: built network
+# DEEPMD: built training
+# DEEPMD: initialize model from scratch
+# DEEPMD: start training at lr 5.00e-03 (== 5.00e-03), decay_step 5000, decay_rate 0.598863, final lr will be 1.76e-07
+# DEEPMD: batch     100 training time 15.36 s, testing time 0.02 s
+# DEEPMD: batch     200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch     300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch     400 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch     500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch     600 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch     700 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch     800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch     900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    1000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch    1100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch    1200 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch    1300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    1400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    1500 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch    1600 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch    1700 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch    1800 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch    1900 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch    2000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch    2100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    2200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch    2300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    2400 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch    2500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch    2600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    2700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    2800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    2900 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch    3000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch    3100 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch    3200 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch    3300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    3400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    3500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    3600 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch    3700 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch    3800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch    3900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    4000 training time 2.35 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch    4100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch    4200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    4300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    4400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    4500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    4600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    4700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    4800 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch    4900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    5000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch    5100 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch    5200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    5300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    5400 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch    5500 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch    5600 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch    5700 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch    5800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch    5900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    6000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch    6100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch    6200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch    6300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    6400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    6500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    6600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    6700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch    6800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    6900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    7000 training time 2.36 s, testing time 0.02 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch    7100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    7200 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch    7300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    7400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    7500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    7600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    7700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch    7800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch    7900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    8000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch    8100 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch    8200 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch    8300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    8400 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch    8500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    8600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    8700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch    8800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    8900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    9000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch    9100 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch    9200 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch    9300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    9400 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch    9500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    9600 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch    9700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch    9800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch    9900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   10000 training time 2.35 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   10100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   10200 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   10300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   10400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   10500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   10600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   10700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   10800 training time 2.38 s, testing time 0.02 s
+# DEEPMD: batch   10900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   11000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   11100 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   11200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   11300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   11400 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   11500 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   11600 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   11700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   11800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   11900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   12000 training time 2.35 s, testing time 0.02 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   12100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   12200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   12300 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   12400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   12500 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   12600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   12700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   12800 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   12900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   13000 training time 2.38 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   13100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   13200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   13300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   13400 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   13500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   13600 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   13700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   13800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   13900 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   14000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   14100 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   14200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   14300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   14400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   14500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   14600 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   14700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   14800 training time 2.34 s, testing time 0.02 s
+# DEEPMD: batch   14900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   15000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   15100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   15200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   15300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   15400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   15500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   15600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   15700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   15800 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   15900 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   16000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   16100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   16200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   16300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   16400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   16500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   16600 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   16700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   16800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   16900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   17000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   17100 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   17200 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   17300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   17400 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   17500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   17600 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   17700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   17800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   17900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   18000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   18100 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   18200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   18300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   18400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   18500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   18600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   18700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   18800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   18900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   19000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   19100 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   19200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   19300 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   19400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   19500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   19600 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   19700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   19800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   19900 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   20000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   20100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   20200 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   20300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   20400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   20500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   20600 training time 2.33 s, testing time 0.03 s
+# DEEPMD: batch   20700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   20800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   20900 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   21000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   21100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   21200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   21300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   21400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   21500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   21600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   21700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   21800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   21900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   22000 training time 2.36 s, testing time 0.02 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   22100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   22200 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   22300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   22400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   22500 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   22600 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   22700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   22800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   22900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   23000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   23100 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   23200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   23300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   23400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   23500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   23600 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   23700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   23800 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   23900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   24000 training time 2.35 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   24100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   24200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   24300 training time 2.34 s, testing time 0.02 s
+# DEEPMD: batch   24400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   24500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   24600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   24700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   24800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   24900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   25000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   25100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   25200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   25300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   25400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   25500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   25600 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   25700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   25800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   25900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   26000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   26100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   26200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   26300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   26400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   26500 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   26600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   26700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   26800 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   26900 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   27000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   27100 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   27200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   27300 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   27400 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   27500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   27600 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   27700 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   27800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   27900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   28000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   28100 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   28200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   28300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   28400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   28500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   28600 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   28700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   28800 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   28900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   29000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   29100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   29200 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   29300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   29400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   29500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   29600 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   29700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   29800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   29900 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   30000 training time 2.37 s, testing time 0.02 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   30100 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   30200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   30300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   30400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   30500 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   30600 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   30700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   30800 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   30900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   31000 training time 2.38 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   31100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   31200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   31300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   31400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   31500 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   31600 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   31700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   31800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   31900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   32000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   32100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   32200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   32300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   32400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   32500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   32600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   32700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   32800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   32900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   33000 training time 2.37 s, testing time 0.02 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   33100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   33200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   33300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   33400 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   33500 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   33600 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   33700 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   33800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   33900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   34000 training time 2.38 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   34100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   34200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   34300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   34400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   34500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   34600 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   34700 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   34800 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   34900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   35000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   35100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   35200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   35300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   35400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   35500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   35600 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   35700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   35800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   35900 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   36000 training time 2.35 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   36100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   36200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   36300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   36400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   36500 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   36600 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   36700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   36800 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   36900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   37000 training time 2.35 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   37100 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   37200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   37300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   37400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   37500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   37600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   37700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   37800 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   37900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   38000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   38100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   38200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   38300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   38400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   38500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   38600 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   38700 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   38800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   38900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   39000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   39100 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   39200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   39300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   39400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   39500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   39600 training time 2.39 s, testing time 0.03 s
+# DEEPMD: batch   39700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   39800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   39900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   40000 training time 2.34 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   40100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   40200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   40300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   40400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   40500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   40600 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   40700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   40800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   40900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   41000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   41100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   41200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   41300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   41400 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   41500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   41600 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   41700 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   41800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   41900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   42000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   42100 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   42200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   42300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   42400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   42500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   42600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   42700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   42800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   42900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   43000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   43100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   43200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   43300 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   43400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   43500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   43600 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   43700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   43800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   43900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   44000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   44100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   44200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   44300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   44400 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   44500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   44600 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   44700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   44800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   44900 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   45000 training time 2.35 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   45100 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   45200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   45300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   45400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   45500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   45600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   45700 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   45800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   45900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   46000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   46100 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   46200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   46300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   46400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   46500 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   46600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   46700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   46800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   46900 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   47000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   47100 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   47200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   47300 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   47400 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   47500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   47600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   47700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   47800 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   47900 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   48000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   48100 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   48200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   48300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   48400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   48500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   48600 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   48700 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   48800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   48900 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   49000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   49100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   49200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   49300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   49400 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   49500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   49600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   49700 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   49800 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   49900 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   50000 training time 2.37 s, testing time 0.02 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   50100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   50200 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   50300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   50400 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   50500 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   50600 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   50700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   50800 training time 2.38 s, testing time 0.02 s
+# DEEPMD: batch   50900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   51000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   51100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   51200 training time 2.38 s, testing time 0.02 s
+# DEEPMD: batch   51300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   51400 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   51500 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   51600 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   51700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   51800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   51900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   52000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   52100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   52200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   52300 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   52400 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   52500 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   52600 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   52700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   52800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   52900 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   53000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   53100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   53200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   53300 training time 2.38 s, testing time 0.02 s
+# DEEPMD: batch   53400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   53500 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   53600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   53700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   53800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   53900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   54000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   54100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   54200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   54300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   54400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   54500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   54600 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   54700 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   54800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   54900 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   55000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   55100 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   55200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   55300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   55400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   55500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   55600 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   55700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   55800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   55900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   56000 training time 2.35 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   56100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   56200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   56300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   56400 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   56500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   56600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   56700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   56800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   56900 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   57000 training time 2.38 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   57100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   57200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   57300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   57400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   57500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   57600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   57700 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   57800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   57900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   58000 training time 2.36 s, testing time 0.02 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   58100 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   58200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   58300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   58400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   58500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   58600 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   58700 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   58800 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   58900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   59000 training time 2.37 s, testing time 0.02 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   59100 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   59200 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   59300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   59400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   59500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   59600 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   59700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   59800 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   59900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   60000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   60100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   60200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   60300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   60400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   60500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   60600 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   60700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   60800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   60900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   61000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   61100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   61200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   61300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   61400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   61500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   61600 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   61700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   61800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   61900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   62000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   62100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   62200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   62300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   62400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   62500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   62600 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   62700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   62800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   62900 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   63000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   63100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   63200 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   63300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   63400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   63500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   63600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   63700 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   63800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   63900 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   64000 training time 2.38 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   64100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   64200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   64300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   64400 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   64500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   64600 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   64700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   64800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   64900 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   65000 training time 2.35 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   65100 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   65200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   65300 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   65400 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   65500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   65600 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   65700 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   65800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   65900 training time 2.39 s, testing time 0.03 s
+# DEEPMD: batch   66000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   66100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   66200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   66300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   66400 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   66500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   66600 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   66700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   66800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   66900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   67000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   67100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   67200 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   67300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   67400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   67500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   67600 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   67700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   67800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   67900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   68000 training time 2.35 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   68100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   68200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   68300 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   68400 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   68500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   68600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   68700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   68800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   68900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   69000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   69100 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   69200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   69300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   69400 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   69500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   69600 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   69700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   69800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   69900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   70000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   70100 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   70200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   70300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   70400 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   70500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   70600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   70700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   70800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   70900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   71000 training time 2.35 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   71100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   71200 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   71300 training time 2.38 s, testing time 0.02 s
+# DEEPMD: batch   71400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   71500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   71600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   71700 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   71800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   71900 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   72000 training time 2.36 s, testing time 0.02 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   72100 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   72200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   72300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   72400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   72500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   72600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   72700 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   72800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   72900 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   73000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   73100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   73200 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   73300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   73400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   73500 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   73600 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   73700 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   73800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   73900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   74000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   74100 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   74200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   74300 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   74400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   74500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   74600 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   74700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   74800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   74900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   75000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   75100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   75200 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   75300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   75400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   75500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   75600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   75700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   75800 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   75900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   76000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   76100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   76200 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   76300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   76400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   76500 training time 2.38 s, testing time 0.02 s
+# DEEPMD: batch   76600 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   76700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   76800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   76900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   77000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   77100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   77200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   77300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   77400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   77500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   77600 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   77700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   77800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   77900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   78000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   78100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   78200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   78300 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   78400 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   78500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   78600 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   78700 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   78800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   78900 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   79000 training time 2.35 s, testing time 0.02 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   79100 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   79200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   79300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   79400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   79500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   79600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   79700 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   79800 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   79900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   80000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   80100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   80200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   80300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   80400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   80500 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   80600 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   80700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   80800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   80900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   81000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   81100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   81200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   81300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   81400 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   81500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   81600 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   81700 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   81800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   81900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   82000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   82100 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   82200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   82300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   82400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   82500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   82600 training time 2.38 s, testing time 0.02 s
+# DEEPMD: batch   82700 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   82800 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   82900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   83000 training time 2.35 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   83100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   83200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   83300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   83400 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   83500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   83600 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   83700 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   83800 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   83900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   84000 training time 2.35 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   84100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   84200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   84300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   84400 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   84500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   84600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   84700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   84800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   84900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   85000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   85100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   85200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   85300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   85400 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   85500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   85600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   85700 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   85800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   85900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   86000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   86100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   86200 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   86300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   86400 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   86500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   86600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   86700 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   86800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   86900 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   87000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   87100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   87200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   87300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   87400 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   87500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   87600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   87700 training time 2.38 s, testing time 0.03 s
+# DEEPMD: batch   87800 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   87900 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   88000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   88100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   88200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   88300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   88400 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   88500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   88600 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   88700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   88800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   88900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   89000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   89100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   89200 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   89300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   89400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   89500 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   89600 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   89700 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   89800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   89900 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   90000 training time 2.35 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   90100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   90200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   90300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   90400 training time 2.34 s, testing time 0.02 s
+# DEEPMD: batch   90500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   90600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   90700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   90800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   90900 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   91000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   91100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   91200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   91300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   91400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   91500 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   91600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   91700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   91800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   91900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   92000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   92100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   92200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   92300 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   92400 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   92500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   92600 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   92700 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   92800 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   92900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   93000 training time 2.35 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   93100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   93200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   93300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   93400 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   93500 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   93600 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   93700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   93800 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   93900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   94000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   94100 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   94200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   94300 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   94400 training time 2.39 s, testing time 0.03 s
+# DEEPMD: batch   94500 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   94600 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   94700 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   94800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   94900 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   95000 training time 2.35 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   95100 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   95200 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   95300 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   95400 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   95500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   95600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   95700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   95800 training time 2.37 s, testing time 0.02 s
+# DEEPMD: batch   95900 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   96000 training time 2.38 s, testing time 0.02 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   96100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   96200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   96300 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   96400 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   96500 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   96600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   96700 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   96800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   96900 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   97000 training time 2.38 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   97100 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   97200 training time 2.35 s, testing time 0.02 s
+# DEEPMD: batch   97300 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   97400 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   97500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   97600 training time 2.34 s, testing time 0.02 s
+# DEEPMD: batch   97700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   97800 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   97900 training time 2.35 s, testing time 0.03 s
+# DEEPMD: batch   98000 training time 2.36 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   98100 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   98200 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   98300 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   98400 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   98500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   98600 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   98700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   98800 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   98900 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   99000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: batch   99100 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   99200 training time 2.37 s, testing time 0.03 s
+# DEEPMD: batch   99300 training time 2.34 s, testing time 0.02 s
+# DEEPMD: batch   99400 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch   99500 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   99600 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   99700 training time 2.36 s, testing time 0.03 s
+# DEEPMD: batch   99800 training time 2.34 s, testing time 0.03 s
+# DEEPMD: batch   99900 training time 2.36 s, testing time 0.02 s
+# DEEPMD: batch  100000 training time 2.37 s, testing time 0.03 s
+# DEEPMD: saved checkpoint model.ckpt
+# DEEPMD: finished training
+# DEEPMD: wall time: 3779.030 s
+The following nodes will be frozen: o_energy,o_force,o_virial,o_atom_energy,o_atom_virial,descrpt_attr/rcut,descrpt_attr/ntypes,fitting_attr/dfparam,fitting_attr/daparam,model_attr/tmap,model_attr/model_type
+3736 ops in the final graph.
+# ---------------Model from files:--------------- 
+model_file  = ./train/model.pb
+# ---------------Raw data from files:--------------- 
+coord_file  = ./raw_data/coord.npy
+energy_file = ./raw_data/energy.npy
+force_file  = ./raw_data/force.npy
+box_file    = None
+# Not using periodic boundary condition
+# Atom types are given by text file
+atom_types    = ./raw_data/type.raw
+# -------------------------------------------------- 
+
+# ---------------Units:--------------- 
+length_unit  = A
+energy_unit  = Eh
+force_unit   = Eh/Bohr
+# ------------------------------------ 
+
+# number of test data : 19200 
+Energy L2err        : 3.590080e-02 eV
+Energy L2err/Natoms : 5.983466e-03 eV
+Force  L2err        : 5.559415e-02 eV/A

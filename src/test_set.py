@@ -38,7 +38,7 @@ class TestSet(object):
 
         self._coord_data  = numpy.load(coord_file)  * length_unit_converter
         self._energy_data = numpy.load(energy_file) * energy_unit_converter
-        self._force_data  = numpy.load(force_file)  * force_unit_converter
+        self._force_data  = -numpy.load(force_file)  * force_unit_converter
 
         self.nframe = self._coord_data.shape[0]
         self.natom  = self._coord_data.shape[1]

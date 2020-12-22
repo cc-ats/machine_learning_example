@@ -18,9 +18,9 @@ class RawData(object):
         energy_unit, energy_unit_converter = get_energy_unit_converter(energy_unit)
         force_unit,  force_unit_converter  = get_force_unit_converter(force_unit)
 
-        self._coord_data  = numpy.load(coord_file)  * length_unit_converter
-        self._energy_data = numpy.load(energy_file) * energy_unit_converter
-        self._force_data  = numpy.load(force_file)  * force_unit_converter
+        self._coord_data  = numpy.load(coord_file)   * length_unit_converter
+        self._energy_data = numpy.load(energy_file)  * energy_unit_converter
+        self._force_data  = -numpy.load(force_file)  * force_unit_converter
 
         self.nframe = self._coord_data.shape[0]
         self.natom  = self._coord_data.shape[1]
@@ -59,7 +59,7 @@ class RawData(object):
         assert num_frame_in_a_set > 1
         num_frame_in_sys   = num_set * num_frame_in_a_set
         index_labels       = numpy.arange(num_frame_in_sys, dtype=int)
-        numpy.random.shuffle(index_labels)
+        # numpy.random.shuffle(index_labels)
         index_labels       = index_labels.reshape(num_set, num_frame_in_a_set)
         self.dump_info(num_set=num_set, dir_name=dir_name, num_frame_in_a_set=num_frame_in_a_set)
 
