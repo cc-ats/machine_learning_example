@@ -1,4 +1,5 @@
 import os
+import time
 import sys
 import numpy
 
@@ -78,9 +79,10 @@ class TestSet(object):
 
         atype  = self._atm_type
         atomic = False
-
+        
+        tt = time.time()
         ret = self.dp.eval(coord, box, atype, fparam = fparam, aparam = aparam, atomic = atomic)
-
+        print("t = ", time.time() - tt)
         energy = ret[0]
         force  = ret[1]
         virial = ret[2]

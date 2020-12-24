@@ -5,9 +5,10 @@ from utils import get_energy_unit_converter, get_length_unit_converter, get_forc
 from utils import dump_info
 
 class RawData(object):
-    def __init__(self, coord_file=None, energy_file=None, force_file=None, box_file=None, atom_types=None, length_unit="A", energy_unit="Eh", force_unit="Eh/Bohr", is_pbc=False, verbose=True):
+    def __init__(self, coord_file=None, energy_file=None, force_file=None, box_file=None, atom_types=None, length_unit="A", energy_unit="Eh", force_unit="Eh/Bohr", is_pbc=False, verbose=True, data_type=numpy.float32):
         self.is_pbc     = is_pbc
         self.verbose    = verbose
+        self.data_type  = data_type
 
         if isinstance(atom_types, str):
             self._atm_type = numpy.loadtxt(atom_types, dtype=int)
@@ -70,16 +71,16 @@ class RawData(object):
             os.makedirs(path_name)
             print("Making %s"%path_name)
 
-            data = self._box_data[indices].reshape(num_frame_in_a_set,9).astype(numpy.float32)
+            data = self._box_data[indices].reshape(num_frame_in_a_set,9).astype(self.data_type)
             numpy.save("%s/box"%path_name, data)
             
-            data = self._coord_data[indices].reshape(num_frame_in_a_set,-1).astype(numpy.float32)
+            data = self._coord_data[indices].reshape(num_frame_in_a_set,-1).astype(self.data_type)
             numpy.save("%s/coord"%path_name, data)
             
-            data = self._energy_data[indices].reshape(num_frame_in_a_set,).astype(numpy.float32)
+            data = self._energy_data[indices].reshape(num_frame_in_a_set,).astype(self.data_type)
             numpy.save("%s/energy"%path_name, data)
             
-            data = self._force_data[indices].reshape(num_frame_in_a_set,-1).astype(numpy.float32)
+            data = self._force_data[indices].reshape(num_frame_in_a_set,-1).astype(self.data_type)
             numpy.save("%s/force"%path_name, data)
 
         if not self.is_pbc:

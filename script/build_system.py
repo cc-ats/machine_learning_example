@@ -1,6 +1,7 @@
 import sys
 sys.path.append("./src/")
 
+from numpy    import float64
 from raw_data import RawData
 
 def main(path_prefix, num_set):
@@ -22,7 +23,8 @@ def main(path_prefix, num_set):
         energy_unit = "Eh",
         force_unit  = "Eh/Bohr",
         atom_types  = atm_type_file,
-        verbose     = True
+        verbose     = True,
+        data_type   = float64
     )
     rd.build(num_set, "%s/data"%path_prefix)
 
