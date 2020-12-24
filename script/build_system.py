@@ -15,7 +15,8 @@ def main(path_prefix, num_set):
     rd = RawData(
         coord_file  = coord_file,
         energy_file = energy_file,
-        force_file  = force_file,
+        grad_file   = force_file,
+        force_file  = None,
         box_file    = None,
         is_pbc      = False,
         length_unit = "A",

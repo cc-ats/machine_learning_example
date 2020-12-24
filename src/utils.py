@@ -6,11 +6,12 @@ def dump_info(kwargs):
         print ("# ---------------Model from files:--------------- ")
         print("model_file  = %s"%kwargs["model_file"])
 
-    if ("coord_file" in kwargs) and ("energy_file" in kwargs) and ("force_file" in kwargs) and ("box_file" in kwargs) and ("is_pbc" in kwargs) and ("atom_types" in kwargs):
+    if ("coord_file" in kwargs) and ("energy_file" in kwargs) and ("force_file" in kwargs) and ("grad_file" in kwargs) and ("box_file" in kwargs) and ("is_pbc" in kwargs) and ("atom_types" in kwargs):
         print ("# ---------------Raw data from files:--------------- ")
         print("coord_file  = %s"%kwargs["coord_file"])
         print("energy_file = %s"%kwargs["energy_file"])
         print("force_file  = %s"%kwargs["force_file"])
+        print("grad_file   = %s"%kwargs["grad_file"])
         print("box_file    = %s"%kwargs["box_file"])
         
         if kwargs["is_pbc"]:
@@ -26,10 +27,11 @@ def dump_info(kwargs):
             print(type(kwargs["atom_types"]))
         print ("# -------------------------------------------------- \n")
 
-    if ("length_unit" in kwargs) and ("energy_unit" in kwargs):
+    if ("length_unit" in kwargs) and ("energy_unit" in kwargs) and ("force_unit" in kwargs):
         print ("# ---------------Units:--------------- ")
         print("length_unit  = %s"%kwargs["length_unit"])
         print("energy_unit  = %s"%kwargs["energy_unit"])
+        print("force_unit   = %s"%kwargs["force_unit"])
         print ("# ------------------------------------ \n")
 
     if ("dir_name" in kwargs) and ("num_set" in kwargs) and ("num_frame_in_a_set" in kwargs):

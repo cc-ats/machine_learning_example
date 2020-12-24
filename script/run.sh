@@ -29,3 +29,6 @@ dp freeze -o              model.pb;
 cd ..;
 mkdir test;
 python script/test_model.py      .;
+
+module purge;
+module load matplotlib/3.2.1-foss-2020a-Python-3.8.2
