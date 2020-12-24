@@ -72,3 +72,17 @@ def get_energy_unit_converter(energy_unit):
         raise AssertionError("Wrong Energy Unit")
 
     return energy_unit_, energy_unit_converter
+
+def get_force_unit_converter(force_unit):
+    force_unit = force_unit.lower()
+    if force_unit in ["ev/a"]:
+        force_unit_          = "eV/A"
+        force_unit_converter = 1.0
+    elif force_unit in ["1", "", "au/au", "a.u./a.u.", "hartree/bohr", "hartree/au", "hartree/a.u.", "eh/bohr", "eh/au", "eh/a.u."]:
+        force_unit_          = "Eh/Bohr"
+        force_unit_converter = hartree_to_ev/bohr_to_angstrom
+    else:
+        print("force_unit = %s"%force_unit)
+        raise AssertionError("Wrong Energy Unit")
+
+    return force_unit_, force_unit_converter
