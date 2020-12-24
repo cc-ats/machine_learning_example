@@ -6,6 +6,10 @@ def dump_info(kwargs):
         print ("# ---------------Model from files:--------------- ")
         print("model_file  = %s"%kwargs["model_file"])
 
+    if ("data_type" in kwargs):
+        print ("# ---------------Data type:--------------- ")
+        print("data_type  = ", kwargs["data_type"])
+
     if ("coord_file" in kwargs) and ("energy_file" in kwargs) and ("force_file" in kwargs) and ("grad_file" in kwargs) and ("box_file" in kwargs) and ("is_pbc" in kwargs) and ("atom_types" in kwargs):
         print ("# ---------------Raw data from files:--------------- ")
         print("coord_file  = %s"%kwargs["coord_file"])
