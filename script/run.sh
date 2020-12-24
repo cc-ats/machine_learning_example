@@ -5,7 +5,7 @@
 #SBATCH --ntasks-per-node=20
 #SBATCH --output=%j.out
 #SBATCH --error=%j.err
-#SBATCH --time=20:00:00
+#SBATCH --time=40:00:00
 #SBATCH --job-name=test
 
 module purge;
@@ -22,14 +22,14 @@ python script/build_system.py . 10;
 
 mkdir data;
 cd train;
-cp ../src/inp_loc.json  ./inp.json;
-dp train                  inp.json;
-dp freeze -o              model.pb;
+cp ../scripts/inp_loc.json  ./inp.json;
+dp train                      inp.json;
+dp freeze -o                  model.pb;
 cd ..;
 
 mkdir test;
-python script/test_model.py      .;
+python script/test_model.py .;
 
 module purge;
-module load matplotlib/3.2.1-foss-2020a-Python-3.8.2
-python script/pl
+module load matplotlib/3.2.1-foss-2020a-Python-3.8.2;
+python script/plot.py .;

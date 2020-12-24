@@ -9,7 +9,7 @@ def main(path_prefix):
 
     coord_file    = "%s/raw_data/coord.npy"%path_prefix
     energy_file   = "%s/raw_data/energy.npy"%path_prefix
-    force_file    = "%s/raw_data/force.npy"%path_prefix
+    grad_file     = "%s/raw_data/force.npy"%path_prefix
     atm_type_file = "%s/raw_data/type.raw"%path_prefix
     model_file    = "%s/train/model.pb"%path_prefix
     detail_file   = "%s/test/test"%path_prefix
@@ -18,11 +18,13 @@ def main(path_prefix):
         model_file  = model_file,
         coord_file  = coord_file,
         energy_file = energy_file,
-        force_file  = force_file,
+        grad_file   = grad_file,
+        force_file  = None,
         box_file    = None,
         is_pbc      = False,
         length_unit = "A",
         energy_unit = "Eh",
+        force_unit  = "Eh/Bohr",
         atom_types  = atm_type_file,
         verbose     = True
     )
