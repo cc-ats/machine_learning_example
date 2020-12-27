@@ -5,7 +5,7 @@
 #SBATCH --ntasks-per-node=20
 #SBATCH --output=%j.out
 #SBATCH --error=%j.err
-#SBATCH --time=40:00:00
+#SBATCH --time=48:00:00
 #SBATCH --job-name=test
 
 module purge;
@@ -22,9 +22,9 @@ python script/build_system.py . 10;
 
 mkdir data;
 cd train;
-cp ../scripts/inp_loc.json  ./inp.json;
-dp train                      inp.json;
-dp freeze -o                  model.pb;
+cp ../script/inp_se_ar.json  ./inp.json;
+dp train                       inp.json;
+dp freeze -o                   model.pb;
 cd ..;
 
 mkdir test;

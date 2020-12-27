@@ -49,7 +49,7 @@ def get_plots(path_name):
     ibatch      = lcurve[:,0]
 
     num_batch  = ibatch.size
-    plot_every = num_batch//200
+    plot_every = num_batch//100
 
     style_dict = {
         'l2_tst':   get_marker(1, marker_size=4, markevery=10),
@@ -93,7 +93,6 @@ def get_plots(path_name):
     axs.grid(ls='--')
     props = {'xlabel': r'$E_\mathrm{data}-E_0$ (eV)', 'ylabel': r'$E_\mathrm{pred}-E_0$ (eV)'}
     axs.set(**props)
-    plt.tight_layout()
     fig.savefig("%s/test/scatter_plot.pdf"%path_name)
     
 def main(path_name):
