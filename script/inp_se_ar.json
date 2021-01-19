@@ -25,7 +25,7 @@
 	    }
 	},
 	"fitting_net" : {
-	    "neuron":		[240, 240, 240, 240],
+	    "neuron":		[10,10],
 	    "resnet_dt":	true,
 	    "seed":		1,
 	    "_comment":		" that's all"
@@ -55,7 +55,7 @@
     "training" : {
 	"systems":	["../data/"],
 	"set_prefix":	"set",    
-	"stop_batch":	2000000,
+	"stop_batch":	20,
 	"batch_size":	4,
 
 	"seed":		1,
@@ -63,9 +63,9 @@
 	"_comment": " display and restart",
 	"_comment": " frequencies counted in batch",
 	"disp_file":	"lcurve.out",
-	"disp_freq":	100,
+	"disp_freq":	1,
 	"numb_test":	10,
-	"save_freq":	1000,
+	"save_freq":	1,
 	"save_ckpt":	"model.ckpt",
 	"load_ckpt":	"model.ckpt",
 	"disp_training":true,
